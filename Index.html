@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesyonel Emlak Danışmanı - Nurettin Sakoğlu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            background-color: rgba(17, 24, 39, 0.9);
+        }
+        
+        .listing-counter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <!-- Navigasyon Çubuğu -->
+    <nav class="nav-blur text-white p-4 fixed top-0 left-0 w-full z-50 shadow-xl border-b border-white/10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold hover:text-gray-300 transition-colors duration-300">
+                <span class="gradient-text text-white">Nurettin Sakoğlu</span>
+            </a>
+            <div class="flex space-x-8 items-center">
+                <a href="#hakkimizda" class="hover:text-blue-300 transition-colors duration-300 font-medium">Hakkımda</a>
+                
+                <div class="relative dropdown">
+                    <a href="#ilanlar" class="hover:text-blue-300 transition-colors duration-300 font-medium flex items-center">
+                        İlanlar 
+                    </a>
+                </div>
+                
+                <a href="https://www.remax.com.tr/danisman/26150/nurettin-sakoglu?t=yorumlar" target="_blank" class="hover:text-blue-300 transition-colors duration-300 font-medium">Müşteri Yorumları</a>
+                <a href="#iletisim" class="hover:text-blue-300 transition-colors duration-300 font-medium">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana Başlık (Hero) Bölümü -->
+    <header class="hero min-h-screen flex flex-col items-center justify-center p-6 text-center">
+        <div class="hero-content animate-fadeInUp">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-white leading-tight">
+                Nurettin Sakoğlu
+            </h1>
+            <p class="text-xl sm:text-2xl max-w-3xl mb-8 text-blue-100 font-light">
+                En değerli mülkümüz <span class="font-semibold text-yellow-300">GÜVEN</span>.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#ilanlar" class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white font-semibold py-4 px-8 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 border border-white/20">
+                    İlanlarımızı Keşfedin
+                </a>
+                <a href="#iletisim" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    İletişime Geçin
+                </a>
+            </div>
+            <div class="mt-16">
+                <img src="https://i.remax.com.tr/photos/employee/50/4d2710815a824b1cb3eef94fb3c6a31c.webp" alt="Nurettin Sakoğlu" class="w-64 h-64 mx-auto rounded-full shadow-2xl border-4 border-white/20 object-cover">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hakkımızda Bölümü -->
+    <section id="hakkimizda" class="py-24 md:py-32 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6 gradient-text">Hakkımda</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Nurettin Sakoğlu olarak, yıllardır bu sektörde edindiğim tecrübe ile müşterilerime en doğru gayrimenkul çözümlerini sunuyorum.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Alım, satım ve kiralama süreçlerinizde şeffaflık, güven ve profesyonellik ilkeleriyle yanınızdayım. Her müşterimin hayallerine ulaşması için kişiye özel danışmanlık hizmeti veriyorum.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-home text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-800">Profesyonel Hizmet</h4>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-handshake text-3xl text-purple-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-800">Güvenilir İşbirliği</h4>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-clock text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-800">7/24 Destek</h4>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-star text-3xl text-yellow-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-800">Kaliteli Hizmet</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İlanlar Bölümü -->
+<section id="ilanlar" class="py-24 md:py-32 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-6 gradient-text">İlanlarımız</h2>
+      <div class="section-divider w-24 mx-auto mb-8"></div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-6">
+      <a href="https://remaxkuzey.sahibinden.com/emlak?sorting=storeShowcase&userId=aUlg2NG2eYPU2cDhFuWSHGg" target="_blank" 
+         class="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-4 px-10 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105">
+        Sahibinden İlanlarını Gör
+      </a>
+
+      <a href="https://www.remax.com.tr/danisman/26150/nurettin-sakoglu?t=portfoylerim" target="_blank" 
+         class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-10 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105">
+        Remax İlanlarını Gör
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- İletişim Bölümü -->
+    <section id="iletisim" class="py-24 md:py-32 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6 gradient-text">Bana Ulaşın</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Gayrimenkul ile ilgili tüm sorularınız için bana aşağıdaki bilgilerden ulaşabilirsiniz.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- İletişim Bilgileri -->
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+                        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Telefon</h4>
+                            <a href="tel:+905327829599" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+                                +90 532 782 9599
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl">
+                        <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white p-3 rounded-full">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">E-posta</h4>
+                            <a href="mailto:nsakoglu55@gmail.com" class="text-green-600 hover:text-green-800 font-medium transition-colors">
+                                nsakoglu55@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
+                        <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-3 rounded-full">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Adres</h4>
+                            <p class="text-purple-600 font-medium">
+                                Mimarsinan, Abdullah Gül Blv No62/A<br>
+                                55300 Atakum/Samsun
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sosyal Medya ve Hızlı İletişim -->
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6 text-center">Hızlı İletişim</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="https://wa.me/905327829599" target="_blank" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-xl text-center transition-all duration-300 transform hover:scale-105 social-link">
+                                <i class="fab fa-whatsapp text-2xl mb-2 block"></i>
+                                <span class="font-semibold">WhatsApp</span>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/nurettin.remax/" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-4 rounded-xl text-center transition-all duration-300 transform hover:scale-105 social-link">
+                                <i class="fab fa-instagram text-2xl mb-2 block"></i>
+                                <span class="font-semibold">Instagram</span>
+                            </a>
+                            
+                            <a href="tel:+905327829599" class="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-xl text-center transition-all duration-300 transform hover:scale-105 social-link">
+                                <i class="fas fa-phone text-2xl mb-2 block"></i>
+                                <span class="font-semibold">Ara</span>
+                            </a>
+                            
+                            <a href="https://www.remax.com.tr/danisman/26150/nurettin-sakoglu?t=yorumlar" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white p-4 rounded-xl text-center transition-all duration-300 transform hover:scale-105 social-link">
+                                <i class="fas fa-star text-2xl mb-2 block"></i>
+                                <span class="font-semibold">Yorumlar</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-clock text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Çalışma Saatleri</h4>
+                        <p class="text-gray-600">Pazartesi - Cumartesi: 09:00 - 18:00</p>
+                        <p class="text-gray-600">Pazar: Randevulu</p>
+                        <p class="text-sm text-blue-600 mt-2 font-medium">Acil durumlar için 7/24 ulaşılabilir</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text text-white">Nurettin Sakoğlu</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Profesyonel emlak danışmanlığı ile hayalinizdeki evi bulmanızda size yardımcı oluyorum.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Hizmetlerimiz</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• Ev Alım Satım</li>
+                        <li>• Kiralama İşlemleri</li>
+                        <li>• Emlak Değerleme</li>
+                        <li>• Yatırım Danışmanlığı</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">İletişim</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>📞 +90 532 782 9599</p>
+                        <p>✉️ nsakoglu55@gmail.com</p>
+                        <p>📍 Atakum, Samsun</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-divider w-full my-8"></div>
+            
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 Created by Yusuf Sait Sakoğlu. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Satılık İlanları Genişletme/Daraltma
+            const showMoreSatilikBtn = document.getElementById('show-more-satilik-btn');
+            const moreSatilikListings = document.getElementById('more-satilik-listings');
+            const satilikChevron = document.getElementById('satilik-chevron');
+            let satilikExpanded = false;
+
+            if (showMoreSatilikBtn && moreSatilikListings) {
+                showMoreSatilikBtn.addEventListener('click', () => {
+                    satilikExpanded = !satilikExpanded;
+                    if (satilikExpanded) {
+                        moreSatilikListings.style.display = 'grid';
+                        showMoreSatilikBtn.innerHTML = '<span>Daha Az Göster</span><i class="fas fa-chevron-up transition-transform duration-300"></i>';
+                        satilikChevron.classList.add('rotate-180');
+                    } else {
+                        moreSatilikListings.style.display = 'none';
+                        showMoreSatilikBtn.innerHTML = '<span>Daha Fazla Göster</span><i class="fas fa-chevron-down transition-transform duration-300"></i>';
+                        satilikChevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('shadow-2xl');
+                } else {
+                    navbar.classList.remove('shadow-2xl');
+                }
+            });
+
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards
+            document.querySelectorAll('.card-hover').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
